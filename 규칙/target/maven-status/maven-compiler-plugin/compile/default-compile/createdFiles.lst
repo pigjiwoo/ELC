@@ -1,0 +1,8 @@
+com\elcserver\elcrules\listeners\GolemListener.class
+com\elcserver\elcrules\listeners\BrewingListener.class
+com\elcserver\elcrules\listeners\DimensionListener.class
+com\elcserver\elcrules\listeners\SpawnProtectionListener.class
+com\elcserver\elcrules\listeners\MilkListener.class
+com\elcserver\elcrules\listeners\VillagerListener.class
+com\elcserver\elcrules\ELCRules.class
+com\elcserver\elcrules\listeners\AutomationListener.class

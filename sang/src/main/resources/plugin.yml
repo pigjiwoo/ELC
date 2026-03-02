@@ -1,0 +1,10 @@
+name: sang
+version: '${version}'
+main: org.examdd.sang.Sang
+api-version: '1.21'
+commands:
+  상점:
+    usage: /<command> [구매|판매|도움말]
+    aliases:
+      - shop
+      - store

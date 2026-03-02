@@ -1,0 +1,11 @@
+name: ELCRules
+version: '1.0.0'
+main: com.elcserver.elcrules.ELCRules
+api-version: '1.21'
+description: ELC 서버 규칙 플러그인
+author: ELC
+    
+permissions:
+  elcrules.bypass:
+    description: 모든 규칙 우회 (관리자용)
+    default: op
