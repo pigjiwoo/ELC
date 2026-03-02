@@ -1,0 +1,189 @@
+# ===================================================
+# 세력·코어 시스템 플러그인 설정 파일
+# ===================================================
+
+# 데이터베이스 설정
+database:
+  # 저장 방식: YAML 또는 MYSQL
+  storage-type: YAML
+  
+  # MySQL 설정 (storage-type이 MYSQL인 경우)
+  mysql:
+    host: localhost
+    port: 3306
+    database: faction_db
+    username: root
+    password: password
+    # 커넥션 풀 설정
+    pool:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+# 세력 단계별 조건
+# 개체(1명) → 무리(2-3명) → 촌락(4-5명) → 마을(6-8명) → 도시(9-14명) → 국가(15-30명) → 황국(31+명)
+faction-tiers:
+  # 무리 → 촌락
+  village:
+    min-members: 4
+    max-members: 5
+    upgrade-cost: 0
+    max-cores: 4
+    max-core-level: 1
+  # 촌락 → 마을
+  town:
+    min-members: 6
+    max-members: 8
+    upgrade-cost: 0
+    max-cores: 8
+    max-core-level: 1
+  # 마을 → 도시
+  city:
+    min-members: 9
+    max-members: 14
+    upgrade-cost: 5000
+    max-cores: 9
+    max-core-level: 2
+  # 도시 → 국가
+  nation:
+    min-members: 15
+    max-members: 30
+    upgrade-cost: 10000
+    max-cores: 16
+    max-core-level: 3
+  # 국가 → 황국
+  empire:
+    min-members: 31
+    upgrade-cost: 20000
+    max-cores: 36
+    max-core-level: 3
+
+# 강등 유예 기간 (시간 단위)
+demotion:
+  grace-period-hours: 48
+  # 촌락 강등 시 반환 비율
+  village-refund:
+    core-refund-per-core: 1000
+    account-refund-percent: 80
+    fever-bonus: 1000
+  # 도시 강등 시 반환
+  city-refund:
+    account-refund: 4000
+    core-downgrade-refund-per-core: 500
+  # 국가 강등 시 반환
+  nation-refund:
+    account-refund: 8000
+    core-downgrade-refund-per-core: 1000
+
+# 쿤 분할 시스템
+kun-distribution:
+  # 개인:세력 비율 (7:3)
+  personal-ratio: 0.7
+  faction-ratio: 0.3
+  # 배수 시스템
+  base-multiplier: 1.5
+  core-multiplier-bonus: 0.05
+  max-multiplier: 2.6
+
+# 세금 시스템
+tax:
+  # 매일 00:00 실행
+  execution-time: "00:00"
+  # 코어당 세금 비율 (1 * 코어 개수)%
+  rate-per-core: 1.0
+
+# 인출 제한
+withdrawal:
+  # 당일 참여자 인출 불가
+  block-same-day-join: true
+  # 인출 한도 비율 (60%)
+  limit-percent: 60
+
+# 코어 시스템
+core:
+  # 설치 후 회수 불가 시간 (분)
+  install-cooldown-minutes: 20
+  # 구매 후 설치 제한 시간 (분)
+  purchase-install-limit-minutes: 20
+  # 회수 후 재설치 제한 시간 (분)
+  retrieve-reinstall-limit-minutes: 20
+  # 회수 비용
+  retrieve-cost: 1000
+  # 설치 기준 Y 좌표
+  install-y-level: 63
+  # 설치 대기 시간 (초)
+  install-delay-seconds: 3
+
+# 코어 단계별 범위 (Y축 무시)
+core-ranges:
+  level-1: 11
+  level-2: 21
+  level-3: 41
+
+# 코어 업그레이드 비용
+core-upgrade-costs:
+  1-to-2: 500
+  2-to-3: 1000
+
+# 포인트 시스템
+points:
+  # 세력 계좌 입금액 대비 포인트 지급 비율 (100%)
+  earn-ratio: 1.0
+
+# 전쟁 시스템
+war:
+  # 격문 작성소 위치 (스폰)
+  proclamation-station:
+    world: world
+    x: 0
+    y: 64
+    z: 0
+  # 격문 작성 가능 시간
+  writing-time:
+    # 주말만 허용
+    weekend-only: true
+    # 시작 시간 (HH:mm)
+    start: "19:00"
+    # 종료 시간 (HH:mm)
+    end: "22:00"
+  # 격문 작성 후 선전포고까지 대기 시간 (분)
+  declaration-delay-minutes: 30
+  # 격문 작성 후 전쟁 시작까지 대기 시간 (분)
+  war-delay-minutes: 60
+
+# Discord 웹훅 설정
+discord:
+  # Discord 알림 활성화
+  enabled: false
+  # 기본 웹훅 URL (모든 세력에 적용)
+  default-webhook-url: ""
+  # 세력별 Discord 웹훅 URL (세력 ID -> 웹훅 URL)
+  # 세력별로 다른 채널에 알림을 보내려면 아래처럼 설정
+  faction-webhooks:
+    # example-faction-id: "https://discord.com/api/webhooks/..."
+  # 알림 종류 설정
+  notifications:
+    # 선전포고 알림 전송
+    declaration: true
+    # 전쟁 시작 알림 전송
+    war-start: true
+    # 전쟁 종료 알림 전송
+    war-end: true
+
+# 메시지 설정
+messages:
+  prefix: "&6[세력] &f"
+  no-permission: "&c권한이 없습니다."
+  not-in-faction: "&c세력에 소속되어 있지 않습니다."
+  already-in-faction: "&c이미 세력에 소속되어 있습니다."
+  faction-created: "&a세력이 생성되었습니다!"
+  faction-left: "&e세력을 탈퇴하였습니다."
+  player-invited: "&a%player%님을 초대하였습니다."
+  player-kicked: "&c%player%님을 추방하였습니다."
+  core-installed: "&a코어가 설치되었습니다!"
+  core-retrieved: "&e코어를 회수하였습니다."
+  insufficient-funds: "&c잔액이 부족합니다."
+  upgrade-success: "&a세력이 업그레이드되었습니다!"
+  demotion-warning: "&c인원 부족! %hours%시간 내 회복하지 않으면 강등됩니다."

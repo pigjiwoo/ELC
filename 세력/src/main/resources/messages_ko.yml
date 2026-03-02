@@ -1,0 +1,121 @@
+# 한국어 메시지 파일
+prefix: "&6[세력] &f"
+
+# 일반 메시지
+general:
+  no-permission: "&c권한이 없습니다."
+  player-only: "&c이 명령어는 플레이어만 사용할 수 있습니다."
+  player-not-found: "&c플레이어를 찾을 수 없습니다."
+  invalid-amount: "&c올바른 금액을 입력해주세요."
+
+# 세력 관련 메시지
+faction:
+  not-in-faction: "&c세력에 소속되어 있지 않습니다."
+  already-in-faction: "&c이미 세력에 소속되어 있습니다."
+  created: "&a세력 &e%faction%&a이(가) 생성되었습니다!"
+  disbanded: "&c세력이 해체되었습니다."
+  left: "&e세력을 탈퇴하였습니다."
+  cannot-leave-leader: "&c세력 대장은 탈퇴할 수 없습니다. 먼저 대장을 위임하세요."
+  
+# 초대/추방
+invite:
+  sent: "&a%player%님에게 초대를 보냈습니다."
+  received: "&a%faction% 세력에서 초대가 왔습니다! &e/세력 수락 &a으로 수락하세요."
+  accepted: "&a%faction% 세력에 가입하였습니다!"
+  declined: "&e초대를 거절하였습니다."
+  expired: "&c초대가 만료되었습니다."
+  already-invited: "&c이미 초대를 보낸 플레이어입니다."
+
+kick:
+  success: "&c%player%님을 세력에서 추방하였습니다."
+  kicked: "&c세력에서 추방되었습니다."
+  cannot-kick-leader: "&c세력 대장을 추방할 수 없습니다."
+  cannot-kick-self: "&c자기 자신을 추방할 수 없습니다."
+
+# 업그레이드 관련
+upgrade:
+  success: "&a세력이 &e%tier%&a(으)로 업그레이드되었습니다!"
+  insufficient-members: "&c세력원이 부족합니다. (필요: %required%명, 현재: %current%명)"
+  insufficient-funds: "&c세력 계좌 잔액이 부족합니다. (필요: %required%쿤)"
+  insufficient-core-level: "&c모든 코어가 %level%단계 이상이어야 합니다."
+  auto-upgrade: "&a조건 충족! 자동으로 %tier%(으)로 업그레이드됩니다."
+
+# 강등 관련
+demotion:
+  warning: "&c&l[경고] &c인원 부족! &e%hours%시간 &c내 회복하지 않으면 강등됩니다."
+  cancelled: "&a인원이 회복되어 강등이 취소되었습니다."
+  executed: "&c세력이 &e%tier%&c(으)로 강등되었습니다."
+  refund: "&e%amount%쿤이 반환되었습니다."
+
+# 코어 관련
+core:
+  installed: "&a코어가 설치되었습니다! (위치: %x%, %y%, %z%)"
+  install-countdown: "&e코어 설치 중... %seconds%초"
+  install-cancelled: "&c코어 설치가 취소되었습니다."
+  install-blocked: "&c해당 위치에 코어를 설치할 수 없습니다."
+  install-overlap-enemy: "&c적 세력 코어와 영역이 겹칩니다."
+  install-time-expired: "&c설치 가능 시간이 만료되었습니다."
+  retrieved: "&e코어를 회수하였습니다. (-1000쿤)"
+  retrieve-cooldown: "&c설치 후 %minutes%분이 지나야 회수할 수 있습니다."
+  upgraded: "&a코어가 &e%level%단계&a로 업그레이드되었습니다!"
+  upgrade-overlap: "&c업그레이드 시 적 세력 코어와 영역이 겹칩니다."
+  registered: "&a코어가 등록되었습니다. (슬롯: %slot%)"
+  register-full: "&c등록 가능한 슬롯이 없습니다."
+  deleted: "&e코어 등록이 삭제되었습니다."
+  teleported: "&a코어로 텔레포트되었습니다."
+
+# 계좌 관련
+account:
+  balance: "&e세력 계좌 잔액: &a%amount%쿤"
+  deposited: "&a%amount%쿤을 입금하였습니다."
+  withdrawn: "&e%amount%쿤을 인출하였습니다."
+  withdraw-limit: "&c오늘 인출 가능 금액: %limit%쿤"
+  withdraw-blocked-new: "&c당일 가입한 세력원은 인출할 수 없습니다."
+  tax-collected: "&e세금 &c%amount%쿤&e이 부과되었습니다."
+
+# 포인트 관련
+points:
+  balance: "&e세력 포인트: &a%amount%점"
+  earned: "&a%amount%포인트를 획득하였습니다."
+  spent: "&e%amount%포인트를 사용하였습니다."
+  insufficient: "&c포인트가 부족합니다."
+
+# 역할 관련
+role:
+  promoted: "&a%player%님이 &e%role%&a(으)로 승급되었습니다."
+  demoted: "&c%player%님이 &e%role%&c(으)로 강등되었습니다."
+  transferred: "&a대장 권한이 %player%님에게 위임되었습니다."
+
+# 전쟁 관련
+war:
+  proclamation-new: "&e새로운 격문이 작성되었습니다."
+  proclamation-created: "&a격문이 작성되었습니다! &e%target%&a 세력에 대한 %type%이 작성되었습니다."
+  proclamation-time-invalid: "&c격문 작성은 주말 19:00 - 22:00에만 가능합니다."
+  proclamation-no-permission: "&c격문은 세력 대장 또는 부대장만 작성할 수 있습니다."
+  proclamation-tier-low: "&c촌락 이상의 세력만 격문을 작성할 수 있습니다."
+  proclamation-countdown-declaration: "&7선전포고까지 %time% 남았습니다."
+  proclamation-countdown-war: "&c전쟁까지 %time% 남았습니다."
+  declaration-notify: "&c&l[선전포고] &e%attacker%&f 세력이 &c%defender%&f 세력에 선전포고를 하였습니다!"
+  declaration-check: "&7선전포고 내용은 &e/세력 선전포고&7 에서 확인하세요."
+  declaration-attacker-notify: "&a&l[선전포고 발동] &f%defender%&f 세력에 대한 선전포고가 발동되었습니다!"
+  war-start: "&c&l[전쟁 시작] &e%attacker%&f 세력과 &c%defender%&f 세력 사이의 전쟁이 시작되었습니다!"
+  war-end: "&a⚔ %attacker% &fvs &a%defender% &f전쟁이 종료되었습니다."
+  war-broadcast-start: "&c&l⚔ %attacker% &fvs &c%defender% &f전쟁이 시작되었습니다!"
+  war-already-active: "&c이미 해당 세력과 격문/전쟁이 진행 중입니다."
+  war-type-mismatch: "&c격문 유형이 맞지 않습니다."
+  war-not-found: "&c해당 격문/전쟁을 찾을 수 없습니다."
+  war-ended: "&a전쟁이 종료되었습니다."
+  station-set: "&a격문 작성소 위치가 현재 위치로 설정되었습니다."
+  
+  # 격문 종류
+  declaration-type-old: "낡은 격문"
+  declaration-type-old-desc: "촌락, 마을 사이"
+  declaration-type-normal: "격문"
+  declaration-type-normal-desc: "도시, 국가, 황국 사이"
+  
+  # Discord 알림
+  discord:
+    declaration-title-attacker: "⚔️ 선전포고 발동"
+    declaration-title-defender: "⚠️ 선전포고 수신"
+    war-start-title: "⚔️ 전쟁 시작!"
+    war-end-title: "🏳️ 전쟁 종료"
